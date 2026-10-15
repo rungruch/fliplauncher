@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  FlipLauncher dimension tokens. See analysis/design-tokens.md for provenance.
+-->
+<resources>
+    <!-- Shape: the 26dp signature radius -->
+    <dimen name="fl_radius_basic">26dp</dimen>
+    <dimen name="fl_radius_dialog">26dp</dimen>
+    <dimen name="fl_radius_button">18dp</dimen>
+    <dimen name="fl_radius_search_bar">32dp</dimen>
+    <dimen name="fl_radius_folder">34dp</dimen>
+    <dimen name="fl_radius_card">22dp</dimen>
+    <dimen name="fl_radius_chip">17dp</dimen>
+
+    <!-- Cover-display grid (Flip 5+ outer screen ~720x748) -->
+    <dimen name="fl_cover_icon_size">49dp</dimen>
+    <dimen name="fl_cover_cell_width">67.5dp</dimen>
+    <dimen name="fl_cover_cell_min_height">74dp</dimen>
+    <dimen name="fl_icon_label_gap">3dp</dimen>
+
+    <!-- Type scale -->
+    <dimen name="fl_text_display">34sp</dimen>
+    <dimen name="fl_text_title">17sp</dimen>
+    <dimen name="fl_text_body">15sp</dimen>
+    <dimen name="fl_text_body_small">14sp</dimen>
+    <dimen name="fl_text_caption">12sp</dimen>
+    <dimen name="fl_text_grid_label">13sp</dimen>
+
+    <!-- Spacing -->
+    <dimen name="fl_spacing_page_horizontal">18dp</dimen>
+    <dimen name="fl_spacing_section">24dp</dimen>
+    <dimen name="fl_spacing_widget_margin">8dp</dimen>
+    <dimen name="fl_section_label_margin_top">12dp</dimen>
+    <dimen name="fl_add_widget_height">40dp</dimen>
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widgetRoot"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:padding="8dp">
+    <LinearLayout
+        android:layout_width="match_parent" android:layout_height="48dp"
+        android:gravity="center_vertical" android:orientation="horizontal">
+        <ImageView
+            android:layout_width="24dp" android:layout_height="24dp"
+            android:importantForAccessibility="no" android:src="@drawable/ic_widget_mark" />
+        <TextView
+            android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+            android:paddingStart="8dp" android:paddingEnd="0dp" android:singleLine="true" android:ellipsize="end"
+            android:text="@string/app_name" android:textColor="@android:color/white"
+            android:textSize="16sp" android:textStyle="bold" />
+        <ImageButton
+            android:id="@+id/widgetEdit" android:layout_width="48dp" android:layout_height="48dp"
+            android:background="@android:color/transparent" android:contentDescription="@string/edit_on_phone"
+            android:padding="12dp" android:src="@drawable/ic_widget_add" />
+    </LinearLayout>
+    <GridView
+        android:id="@+id/widgetGrid" android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:columnWidth="72dp" android:gravity="center"
+        android:horizontalSpacing="0dp" android:listSelector="@android:color/transparent"
+        android:numColumns="4" android:scrollbars="none" android:stretchMode="columnWidth" android:visibility="gone"
+        android:verticalSpacing="4dp" />
+    <TextView
+        android:id="@+id/widgetEmpty" android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:gravity="center" android:padding="24dp"
+        android:text="@string/widget_empty" android:textColor="@android:color/white"
+        android:textSize="15sp" />
+</LinearLayout>

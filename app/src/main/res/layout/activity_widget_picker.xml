@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widgetPickerRoot" android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/fl_editor_background" android:focusableInTouchMode="true">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="20dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical">
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:text="@string/choose_widget" android:textSize="26sp" android:textStyle="bold"
+                android:textColor="@color/fl_editor_text" android:accessibilityHeading="true" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/closeWidgetPicker"
+                style="@style/Widget.Material3.Button.TextButton" android:layout_width="wrap_content"
+                android:layout_height="48dp" android:text="@string/cancel" android:textAllCaps="false" />
+        </LinearLayout>
+        <TextView android:id="@+id/widgetPickerSubtitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/widget_picker_subtitle"
+            android:textSize="14sp" android:textColor="@color/fl_editor_secondary" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/showAllWidgetApps"
+            style="@style/Widget.Material3.Button.TextButton" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:minHeight="48dp" android:text="@string/show_all_widget_apps"
+            android:textAllCaps="false" android:visibility="gone" />
+        <EditText android:id="@+id/widgetSearch" android:layout_width="match_parent" android:layout_height="52dp"
+            android:layout_marginTop="16dp" android:paddingStart="16dp" android:paddingEnd="16dp"
+            android:background="@drawable/fl_editor_card" android:hint="@string/search_widgets" android:inputType="text"
+            android:imeOptions="actionDone" android:singleLine="true" android:textSize="15sp"
+            android:textColor="@color/fl_editor_text" android:textColorHint="@color/fl_editor_secondary" />
+    </LinearLayout>
+    <TextView android:id="@+id/widgetPickerStatus" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:gravity="center" android:padding="16dp" android:text="@string/loading_widgets"
+        android:accessibilityLiveRegion="polite" android:textColor="@color/fl_editor_secondary" android:textSize="14sp" />
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/widgetProviderList" android:layout_width="match_parent"
+            android:layout_height="0dp" android:layout_weight="1" android:paddingStart="20dp" android:paddingEnd="20dp" android:clipToPadding="false" />
+</LinearLayout>

@@ -1,0 +1,5 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="@color/fl_native_card" />
+    <!-- One UI radius-card (analysis/design-tokens.md). -->
+    <corners android:radius="22dp" />
+</shape>

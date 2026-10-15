@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.FlipLauncher" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/fl_background</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="colorPrimary">@color/fl_primary</item>
+        <item name="colorOnPrimary">@color/fl_gray_01</item>
+        <item name="android:colorBackground">@color/fl_background</item>
+        <item name="colorSurface">@color/fl_surface</item>
+        <item name="colorOnSurface">@color/fl_on_background</item>
+    </style>
+
+    <style name="FlipLauncher.Card" parent="">
+        <item name="android:background">@drawable/fl_card_background</item>
+    </style>
+
+    <!-- Native widgets must inflate without AppCompat's view substitutions. -->
+    <style name="Theme.FlipLauncher.Cover" parent="android:style/Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/fl_background</item>
+        <item name="android:colorBackground">@color/fl_background</item>
+        <item name="android:colorAccent">@color/fl_primary</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+    </style>
+
+    <style name="Theme.FlipLauncher.Editor" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:windowBackground">@color/fl_editor_background</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="colorPrimary">@color/fl_primary</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorSurface">@android:color/white</item>
+        <item name="colorOnSurface">@color/fl_editor_text</item>
+        <item name="android:colorBackground">@color/fl_editor_background</item>
+    </style>
+
+    <style name="Theme.FlipLauncher.LaunchRouter" parent="android:style/Theme.Material.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+</resources>

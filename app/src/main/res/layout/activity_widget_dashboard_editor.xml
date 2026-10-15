@@ -1,0 +1,69 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dashboardEditorRoot" android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/fl_editor_background">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:gravity="center_vertical" android:paddingStart="20dp" android:paddingEnd="20dp" android:paddingTop="12dp">
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+            android:text="@string/app_name" android:textSize="30sp" android:textStyle="bold"
+            android:textColor="@color/fl_editor_text" android:accessibilityHeading="true" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/finishWidgetEditor"
+            style="@style/Widget.Material3.Button.TextButton" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:minHeight="48dp" android:text="@string/done" android:textAllCaps="false" />
+    </LinearLayout>
+    <androidx.core.widget.NestedScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"
+        android:fillViewport="true" android:clipToPadding="false">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="20dp">
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="@string/widget_dashboard_subtitle" android:textSize="15sp" android:textColor="@color/fl_editor_secondary" />
+            <include layout="@layout/cover_setup_checklist" />
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical">
+                <TextView android:id="@+id/editorShortcutCount" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                    android:textSize="18sp" android:textStyle="bold" android:textColor="@color/fl_editor_text" android:accessibilityHeading="true" />
+                <com.google.android.material.button.MaterialButton android:id="@+id/manageAppShortcuts"
+                    style="@style/Widget.Material3.Button.OutlinedButton" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:minHeight="48dp" android:text="@string/choose_app_shortcuts" android:textAllCaps="false" />
+            </LinearLayout>
+            <TextView android:id="@+id/editorShortcutsEmpty" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:paddingTop="12dp" android:paddingBottom="12dp" android:text="@string/shortcut_editor_empty"
+                android:textSize="14sp" android:textColor="@color/fl_editor_secondary" />
+            <androidx.recyclerview.widget.RecyclerView android:id="@+id/editorAppShortcuts" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" />
+            <TextView android:id="@+id/widgetScreenCount" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="20dp" android:textSize="18sp" android:textStyle="bold"
+                android:textColor="@color/fl_editor_text" android:accessibilityHeading="true" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp"
+                android:text="@string/widget_dashboard_hint" android:textSize="13sp" android:textColor="@color/fl_editor_secondary" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/addWidgetScreen" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:minHeight="56dp" android:layout_marginTop="12dp" android:layout_marginBottom="12dp"
+                android:text="@string/add_widget" android:textAllCaps="false" android:textSize="16sp" />
+            <LinearLayout android:id="@+id/widgetSetupPending" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:padding="12dp" android:layout_marginBottom="12dp" android:orientation="vertical"
+                android:background="@drawable/fl_editor_card" android:visibility="gone">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/pending_widget_setup"
+                    android:textSize="13sp" android:textColor="@color/fl_editor_text" />
+                <com.google.android.material.button.MaterialButton android:id="@+id/cancelWidgetSetup"
+                    style="@style/Widget.Material3.Button.TextButton" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:minHeight="48dp" android:text="@string/cancel_widget_setup" android:textAllCaps="false" />
+            </LinearLayout>
+            <LinearLayout android:id="@+id/widgetDashboardEmpty" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:gravity="center" android:padding="20dp" android:background="@drawable/fl_editor_card">
+                <ImageView android:layout_width="48dp" android:layout_height="48dp" android:src="@drawable/ic_widget_mark" android:importantForAccessibility="no" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp"
+                    android:gravity="center" android:text="@string/widget_dashboard_empty_title" android:textSize="18sp"
+                    android:textStyle="bold" android:textColor="@color/fl_editor_text" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp"
+                    android:gravity="center" android:text="@string/widget_dashboard_empty" android:textSize="14sp" android:textColor="@color/fl_editor_secondary" />
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView android:id="@+id/widgetScreenList" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" android:clipToPadding="false" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:paddingTop="8dp" android:paddingBottom="8dp" android:text="@string/widget_dashboard_reorder"
+                android:textSize="12sp" android:textColor="@color/fl_editor_secondary" />
+            <TextView android:id="@+id/widgetDashboardHelp" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp"
+                android:gravity="center_vertical" android:text="@string/open_widget_screens" android:textColor="@color/fl_primary"
+                android:background="?attr/selectableItemBackground" android:clickable="true" android:focusable="true" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

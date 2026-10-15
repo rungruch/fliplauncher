@@ -1,0 +1,19 @@
+[versions]
+agp = "9.4.0"
+androidx-core = "1.18.0"
+appcompat = "1.7.1"
+recyclerview = "1.4.0"
+material = "1.14.0"
+junit = "4.13.2"
+robolectric = "4.17"
+
+[libraries]
+androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidx-core" }
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
+material = { module = "com.google.android.material:material", version.ref = "material" }
+junit = { module = "junit:junit", version.ref = "junit" }
+robolectric = { module = "org.robolectric:robolectric", version.ref = "robolectric" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }

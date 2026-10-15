@@ -1,0 +1,54 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp"
+    android:layout_marginBottom="20dp" android:padding="16dp" android:orientation="vertical" android:background="@drawable/fl_editor_card">
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="@string/setup_checklist_title" android:textSize="20sp" android:textStyle="bold"
+        android:textColor="@color/fl_editor_text" android:accessibilityHeading="true" />
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp"
+        android:orientation="horizontal" android:gravity="center_vertical">
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+            <TextView android:id="@+id/setupWidgetStatus" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:textSize="14sp" android:textStyle="bold" android:textColor="@color/fl_editor_text" android:accessibilityLiveRegion="polite" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp"
+                android:text="@string/setup_widget_placement_detail" android:textSize="12sp" android:textColor="@color/fl_editor_secondary" />
+        </LinearLayout>
+        <com.google.android.material.button.MaterialButton android:id="@+id/setupWidgetAction"
+            style="@style/Widget.Material3.Button.TextButton" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:minHeight="48dp" android:maxWidth="132dp" android:layout_marginStart="8dp" android:text="@string/open_settings" android:textAllCaps="false" />
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp"
+        android:orientation="horizontal" android:gravity="center_vertical">
+        <TextView android:id="@+id/setupContentStatus" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+            android:textSize="14sp" android:textStyle="bold" android:textColor="@color/fl_editor_text" android:accessibilityLiveRegion="polite" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/setupContentAction"
+            style="@style/Widget.Material3.Button.TextButton" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:minHeight="48dp" android:maxWidth="132dp" android:layout_marginStart="8dp" android:text="@string/setup_choose_content" android:textAllCaps="false" />
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp"
+        android:orientation="horizontal" android:gravity="center_vertical">
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+            <TextView android:id="@+id/setupUpdatesStatus" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:textSize="14sp" android:textStyle="bold" android:textColor="@color/fl_editor_text" android:accessibilityLiveRegion="polite" />
+            <TextView android:id="@+id/setupUpdatesDetail" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp"
+                android:textSize="12sp" android:textColor="@color/fl_editor_secondary" />
+        </LinearLayout>
+        <com.google.android.material.button.MaterialButton android:id="@+id/nativeCoverUpdates"
+            style="@style/Widget.Material3.Button.TextButton" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:minHeight="48dp" android:maxWidth="132dp" android:layout_marginStart="8dp" android:text="@string/native_start_updates" android:textAllCaps="false" />
+    </LinearLayout>
+    <LinearLayout android:id="@+id/setupLaunchIssue" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="16dp" android:orientation="vertical" android:visibility="gone">
+        <TextView android:id="@+id/setupLaunchIssueTitle" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textSize="14sp" android:textStyle="bold" android:textColor="@color/fl_editor_text" />
+        <TextView android:id="@+id/setupLaunchIssueMessage" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="4dp" android:textSize="13sp" android:textColor="@color/fl_editor_secondary" />
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+            <com.google.android.material.button.MaterialButton android:id="@+id/setupLaunchHelp"
+                style="@style/Widget.Material3.Button.TextButton" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:minHeight="48dp" android:text="@string/setup_troubleshoot" android:textAllCaps="false" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/dismissLaunchIssue"
+                style="@style/Widget.Material3.Button.TextButton" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:minHeight="48dp" android:text="@string/setup_dismiss_issue" android:textAllCaps="false" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

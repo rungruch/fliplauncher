@@ -1,0 +1,27 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/nativeWidgetRow"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="vertical" android:background="@drawable/fl_native_card" android:padding="8dp">
+    <!-- Cards with a header are for status rows; relayed widgets drop both in NativeWidgetListService. -->
+    <LinearLayout android:id="@+id/nativeWidgetHeader" android:layout_width="match_parent" android:layout_height="40dp"
+        android:orientation="horizontal" android:gravity="center_vertical">
+        <TextView android:id="@+id/nativeWidgetLabel" android:layout_width="0dp" android:layout_height="match_parent"
+            android:layout_weight="1" android:gravity="center_vertical" android:paddingStart="6dp"
+            android:textSize="14sp" android:fontFamily="sans-serif-medium"
+            android:textColor="@color/fl_on_background" android:singleLine="true" android:ellipsize="end" />
+        <TextView android:id="@+id/nativeWidgetOpen" android:layout_width="wrap_content" android:layout_height="match_parent"
+            android:minWidth="72dp" android:paddingStart="12dp" android:paddingEnd="6dp" android:gravity="center_vertical|end"
+            android:text="@string/native_open" android:textColor="@color/fl_primary_dark"
+            android:textSize="13sp" android:fontFamily="sans-serif-medium" />
+    </LinearLayout>
+    <FrameLayout android:id="@+id/nativeWidgetCanvas" android:layout_width="match_parent" android:layout_height="200dp">
+        <FrameLayout android:id="@+id/nativeWidgetContent" android:layout_width="match_parent" android:layout_height="match_parent" />
+        <!-- GridLayout defaults a provider root's unresolvable layout_width/height instead of failing. -->
+        <GridLayout android:id="@+id/nativeWidgetContentLenient" android:layout_width="match_parent" android:layout_height="match_parent"
+            android:columnCount="1" android:useDefaultMargins="false" />
+        <FrameLayout android:id="@+id/nativeWidgetTapTarget" android:layout_width="match_parent" android:layout_height="match_parent"
+            android:background="@android:color/transparent" android:clickable="true" android:focusable="true" />
+    </FrameLayout>
+    <TextView android:id="@+id/nativeWidgetStatus" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:paddingStart="6dp" android:paddingEnd="6dp" android:paddingTop="2dp" android:paddingBottom="8dp"
+        android:lineSpacingMultiplier="1.15" android:textColor="@color/fl_on_surface_variant" android:textSize="12sp" />
+</LinearLayout>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <!-- Cover updates start on their own: after boot, and from widget refreshes once unrestricted. -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+
+    <!-- Query all launchable apps for the drawer (Android 11+ package visibility). -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent>
+        <intent>
+            <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+        </intent>
+    </queries>
+
+    <application
+        android:name=".ShortcutCatalogApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.FlipLauncher">
+
+        <!-- Keep this component stable for the user's Good Lock app selection. -->
+        <activity
+            android:name=".CoverLauncherActivity"
+            android:exported="true"
+            android:theme="@style/Theme.FlipLauncher.Cover"
+            android:excludeFromRecents="true"
+            android:taskAffinity="com.fliplauncher.covergrid"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|density|keyboardHidden"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".WidgetDashboardEditorActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden"
+            android:theme="@style/Theme.FlipLauncher.Editor">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".WidgetPickerActivity" android:exported="false"
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden"
+            android:theme="@style/Theme.FlipLauncher.Editor" />
+        <activity android:name=".AppShortcutPickerActivity" android:exported="false"
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden"
+            android:theme="@style/Theme.FlipLauncher.Editor" />
+        <activity android:name=".LauncherWidgetConfigActivity" android:exported="false"
+            android:theme="@style/Theme.FlipLauncher.Editor" />
+
+        <receiver android:name=".HostedWidgetRestoreReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_HOST_RESTORED" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".NativeWidgetListService" android:exported="false"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+        <service android:name=".NativeWidgetRelayService" android:exported="false"
+            android:foregroundServiceType="specialUse">
+            <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="Receives updates for user-selected home widgets displayed in a native Samsung cover widget, which has no public visibility lifecycle callback." />
+        </service>
+
+        <activity
+            android:name=".CoverLaunchRouterActivity"
+            android:exported="false"
+            android:excludeFromRecents="true"
+            android:noHistory="true"
+            android:taskAffinity="com.fliplauncher.coverlaunch"
+            android:theme="@style/Theme.FlipLauncher.LaunchRouter" />
+
+        <receiver
+            android:name=".FlipLauncherWidgetProvider"
+            android:exported="false"
+            android:label="@string/widget_name">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_FULLY_REMOVED" />
+                <data android:scheme="package" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/flip_launcher_widget_info" />
+            <meta-data
+                android:name="com.samsung.android.appwidget.provider"
+                android:resource="@xml/flip_launcher_samsung_info" />
+        </receiver>
+    </application>
+</manifest>

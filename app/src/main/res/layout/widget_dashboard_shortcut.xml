@@ -1,0 +1,29 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:padding="16dp"
+    android:orientation="vertical" android:background="@drawable/fl_preview_wallpaper">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="48dp"
+        android:orientation="horizontal" android:gravity="center_vertical">
+        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_widget_mark"
+            android:importantForAccessibility="no" />
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+            android:paddingStart="8dp" android:paddingEnd="0dp" android:text="@string/app_name" android:textSize="16sp"
+            android:textStyle="bold" android:textColor="@android:color/white" android:singleLine="true" android:ellipsize="end" />
+        <ImageButton android:id="@+id/editWidgetShortcut" android:layout_width="48dp" android:layout_height="48dp"
+            android:padding="12dp" android:background="@android:color/transparent" android:src="@drawable/ic_widget_add"
+            android:contentDescription="@string/edit_widget_screens" />
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"
+        android:orientation="vertical" android:gravity="center">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:gravity="center" android:text="@string/widget_dashboard_shortcut_title" android:textSize="24sp"
+            android:textStyle="bold" android:textColor="@android:color/white" />
+        <TextView android:id="@+id/shortcutWidgetCount" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="8dp" android:gravity="center" android:textSize="14sp" android:textColor="@android:color/white" />
+        <TextView android:id="@+id/shortcutWidgetSummary" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="8dp" android:gravity="center" android:maxLines="2" android:ellipsize="end"
+            android:textSize="13sp" android:textColor="@android:color/white" />
+    </LinearLayout>
+    <Button android:id="@+id/openWidgetScreens" android:layout_width="match_parent" android:layout_height="48dp"
+        android:text="@string/open_widget_screens" android:textAllCaps="false" android:textColor="@android:color/white"
+        android:background="@drawable/fl_widget_background" />
+</LinearLayout>

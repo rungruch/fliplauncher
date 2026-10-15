@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Original gear glyph for the settings button. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <group
+        android:pivotX="12"
+        android:pivotY="12"
+        android:rotation="0">
+        <path
+            android:fillColor="#FCFCFF"
+            android:pathData="M11,3.5 h2 v4 h-2 Z" />
+    </group>
+    <group
+        android:pivotX="12"
+        android:pivotY="12"
+        android:rotation="45">
+        <path
+            android:fillColor="#FCFCFF"
+            android:pathData="M11,3.5 h2 v4 h-2 Z" />
+    </group>
+    <group
+        android:pivotX="12"
+        android:pivotY="12"
+        android:rotation="90">
+        <path
+            android:fillColor="#FCFCFF"
+            android:pathData="M11,3.5 h2 v4 h-2 Z" />
+    </group>
+    <group
+        android:pivotX="12"
+        android:pivotY="12"
+        android:rotation="135">
+        <path
+            android:fillColor="#FCFCFF"
+            android:pathData="M11,3.5 h2 v4 h-2 Z" />
+    </group>
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FCFCFF"
+        android:strokeWidth="2"
+        android:pathData="M12,7.5 m-4.5,0 a4.5,4.5 0 1,0 9,0 a4.5,4.5 0 1,0 -9,0" />
+    <path
+        android:fillColor="#FCFCFF"
+        android:pathData="M12,10.5 m-1.5,0 a1.5,1.5 0 1,0 3,0 a1.5,1.5 0 1,0 -3,0" />
+</vector>

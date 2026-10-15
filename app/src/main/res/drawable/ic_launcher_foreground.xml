@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Original FlipLauncher glyph: a folding clamshell mark. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="#387AFF"
+        android:pathData="M54,22 L78,22 C82,22 84,24 84,28 L84,46 C84,50 82,52 78,52 L54,52 Z" />
+    <path
+        android:fillColor="#598FFF"
+        android:pathData="M54,56 L78,56 C82,56 84,58 84,62 L84,80 C84,84 82,86 78,86 L54,86 Z" />
+    <path
+        android:fillColor="#252528"
+        android:pathData="M50,22 L54,22 L54,86 L50,86 C46,86 44,84 44,80 L44,28 C44,24 46,22 50,22 Z" />
+</vector>

@@ -1,0 +1,37 @@
+node_modules/
+*.log
+.DS_Store
+# decoded resources (regenerable via jadx)
+analysis/apk-res/
+
+build-check/
+
+local.properties
+
+# Gradle build outputs
+.gradle/
+.kotlin/
+build/
+app/build/
+
+# Packaged build deliverables
+artifacts/
+
+# Downloaded third-party packages (reference only, never redistributed)
+*.apk
+*.xapk
+*.apks
+*.apk.zip
+analysis/**/*.dex
+analysis/**/*.so
+
+# Local research, reference sources and agent tooling (not published)
+analysis/
+third_party/
+.agents/
+.claude/
+.codex/
+.taste-skill/
+skills-lock.json
+package.json
+package-lock.json
