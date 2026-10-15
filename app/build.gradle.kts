@@ -15,9 +15,21 @@ android {
         versionName = "0.7.0"
     }
 
+    // Release signing comes from the environment (CI secrets); without it release APKs stay unsigned.
+    val releaseKeystore = System.getenv("FLIPLAUNCHER_KEYSTORE")?.takeIf { it.isNotBlank() }
+    signingConfigs {
+        if (releaseKeystore != null) create("release") {
+            storeFile = file(releaseKeystore)
+            storePassword = System.getenv("FLIPLAUNCHER_KEYSTORE_PASSWORD")
+            keyAlias = System.getenv("FLIPLAUNCHER_KEY_ALIAS")
+            keyPassword = System.getenv("FLIPLAUNCHER_KEY_PASSWORD")
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
+            signingConfig = signingConfigs.findByName("release")
         }
     }
     compileOptions {
